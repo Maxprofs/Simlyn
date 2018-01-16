@@ -37,7 +37,7 @@ If you want to run Simlyn, please make sure that you have
 -   [Visual Studio Code](https://code.visualstudio.com/download) or your preferred web IDE
 
 ## Online Mode
-Online mode covers the steps of the setup described in the architecture above.
+Online mode covers the steps of the setup described in the architecture above. If you want to run Simlyn locally, I recommend you to walk through the offline mode scenario.
 
 1.	Deploy Azure services
 
