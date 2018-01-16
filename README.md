@@ -41,7 +41,7 @@ Online mode covers the steps of the setup described in the architecture above. I
 
 1.	Deploy Azure services
 
-    Open the Visual Studio solution [Simlyn ARM Deployment](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20ARM%20Deployment). Deploy the template into an Azure Resource Group (RG) by following [this guide](https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy#deploy-the-resource-group-project-to-azure). Make sure you properly set the variables in the parameters file. Please also make sure that the variables are set as described in the table below
+    Open the Visual Studio solution [Simlyn ARM Deployment](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Azure%20Resource%20Deployment). Deploy the template into an Azure Resource Group (RG) by following [this guide](https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy#deploy-the-resource-group-project-to-azure). Make sure you properly set the variables in the parameters file. Please also verify  that the Azure resource settings as listed below are set correctly
     
 	| Resource     | Setting | Value | Description |
 	| :---         | :---         | :---         | :---          |
