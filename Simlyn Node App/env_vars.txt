@@ -1,0 +1,2 @@
+set Azure.IoT.IoTHub.ConnectionString=<connectionString>
+set Azure.IoT.IoTHub.ConsumerGroup=<consumerGroup>
