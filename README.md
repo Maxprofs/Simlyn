@@ -68,14 +68,14 @@ Online mode covers the steps of the setup described in the architecture above. I
 
 3. Configure and Publish the Web API
 
-	- If you havent done so far, install [.NET Core 2.0 or later](https://www.microsoft.com/net/download/windows) on your machine
-    - Open the [Web API project](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Web%20API) and switch to the `Globals.cs` class in the Helpers folder. Edit the following parameters:
-        - `public static readonly string DocDBDatabaseId = "<Your Database ID>";`
-        - `public static readonly string DocDBEndpoint = "<Your Cosmos DB Endpoint Uri>";`
-        - `public static readonly string DocDBAuthKey = "<Your Doc DB Auth key>";`
-        - `public static readonly string DocDBCollectionHistory = "<Your Collection Name>";`
-    - Right click on the project and select `Publish`. Deploy the API to one of the apps you created in step 1
-    - [Swagger](https://swagger.io/) is part of the project, so you can browse to `<resourcename>.azurewebsites.net/swagger` to see the .NET controllers and operations used in the project
+	- If you havent done by now, install [.NET Core 2.0 or later](https://www.microsoft.com/net/download/windows) on your local machine
+    - Open the [Simlyn Web API](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Web%20API) and switch to the class `Globals.cs`. Edit the following parameters (you get all parameters by switching to the Cosmos DB database account using the Azure portal):
+        - `public static readonly string DocDBDatabaseId = "<Your Database ID>";` on line 13
+        - `public static readonly string DocDBEndpoint = "<Your Cosmos DB Endpoint Uri>";` on line 14
+        - `public static readonly string DocDBAuthKey = "<Your Doc DB Auth key>";` on line 15
+        - `public static readonly string DocDBCollectionHistory = "<Your Collection Name>";` on line 20
+    - Right click on the project and select `Publish`. Deploy the API to one of the web app resources you created in step 1
+    - As [Swagger](https://swagger.io/) is part of the project, so you can browse to `<resourcename>.azurewebsites.net/swagger` to see the .NET controllers and operations used in the project
    
 4.	Configure and Publish the Node Web App
 
