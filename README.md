@@ -76,6 +76,8 @@ Online mode covers the steps of the setup described in the architecture above. I
         - `public static readonly string DocDBCollectionHistory = "<Your Collection Name>";` on line 20
     - Right click on the project and select `Publish`. Deploy the API to one of the web app resources you created in step 1
     - As we are using [Swagger](https://swagger.io/), so you can browse to `<resourcename>.azurewebsites.net/swagger` to see the .NET controllers and operations
+    
+    ![Simlyn Web API Swagger](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Swagger%20API%20App.JPG)
    
 4.	Configure and Publish the Node Web App
 
