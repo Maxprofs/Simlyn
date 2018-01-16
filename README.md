@@ -92,10 +92,11 @@ Online mode covers the steps of the setup described in the architecture above. I
 		- `twoSettlement`
    - Make sure you enabled local git repository deployment by following [this tutorial](https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-local-git). Copy the Git repository URL from web app resource using the Azure portal
     - Publish the Node app to Azure by running the cmdlets below
-        - `git remote add simlynnodeapp <Git clone URL from portal>`
+        - `git remote add simlynnodeapp <Git clone URL from the Azure portal>`
         - `git push simlynnodeapp master:master`
-    - The deployment will take some time as the command start the build and release process
-    - After clicking on the “End Simulation” button, the Final Bundle gets created. I did not implement the `AttachToTangle` function so the demo gets automatically reset
+    - The deployment will take some time as the cmdlet kicks off the Node build and release tasks
+    - You can now browse to the URL 'https://<your-web-app>.azurewebsites.net' and start the simulation
+    - After clicking on the “End Simulation” button, IOTA's Final Bundle gets created. I did not implement the `AttachToTangle` function so the demo gets automatically reset
     
 4. Enabling Power BI to visualize the coordinates provided by the Cosmos DB database
 
@@ -107,7 +108,7 @@ Online mode covers the steps of the setup described in the architecture above. I
 ![Simlyn Power BI](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_PowerBi.JPG)
 
 ## Offline Mode
-You can also run Simlyn in offline mode. This means that the Node app has no interaction to the cloud and the hardware device.
+You can also run Simlyn in offline mode. This means that the Node app has no interaction to the cloud (except Cosmos DB) and the hardware device.
 
 1. Open the command line tool and set the environment variables below
     - `set Azure.IoT.IoTHub.ConnectionString=<randomstring>`
