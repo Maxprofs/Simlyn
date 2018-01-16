@@ -81,18 +81,16 @@ Online mode covers the steps of the setup described in the architecture above. I
    
 4.	Configure and Publish the Node Web App
 
-	- I recommend to use [Visual Studio Code](https://code.visualstudio.com/) for editing JavaScript and HTML files
-    - Open the directroy [Simlyn Node App](https://blaaah.de) and switch to `public/javascripts/` folder. Edit the following variable: 
+    - Open the directroy [Simlyn Node App](https://blaaah.de) and switch to `public/javascripts/` folder using [Visual Studio Code](https://code.visualstudio.com/) or you preferred web IDE. Edit the following variable: 
         - `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `index.js`
-		- `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `iotaflash.js`
-		- `var UseMockedData = false` in `index.js`
-	- Switch to `IOTAHelpers/globals.js`and update the variables listed below  (use the online generator get a seed and generate an address using the IOTA's light wallet)
+	- `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `iotaflash.js`
+	- `var UseMockedData = false` in `index.js`
+   - Switch to the file `IOTAHelpers/globals.js`and update the variables listed below (you may use an online seed generator and create an address using IOTA's light wallet)
 		- `oneSeed`
 		- `twoSeed`
 		- `oneSettlement`
 		- `twoSettlement`
-    - Switch to the second web app and enable local Git deployment by following this tutorias
-	- Enable local git repository deployment by following [this tutorial](https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-local-git)
+   - Make sure you enabled local git repository deployment by following [this tutorial](https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-local-git). Copy the Git repository URL from web app resource using the Azure portal
     - Publish the Node app to Azure by running the cmdlets below
         - `git remote add simlynnodeapp <Git clone URL from portal>`
         - `git push simlynnodeapp master:master`
