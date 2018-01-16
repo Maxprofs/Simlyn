@@ -84,7 +84,7 @@ Online mode covers the steps of the setup described in the architecture above. I
         - `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `index.js`
 		- `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `iotaflash.js`
 		- `var UseMockedData = false` in `index.js`
-	- Switch to `IOTAHelpers/globals.js`and update the variables listed below  (use the online generator get create a a seed and generate an address using the wallet)
+	- Switch to `IOTAHelpers/globals.js`and update the variables listed below  (use the online generator get a seed and generate an address using the IOTA's light wallet)
 		- `oneSeed`
 		- `twoSeed`
 		- `oneSettlement`
