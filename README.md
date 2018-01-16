@@ -75,7 +75,7 @@ Online mode covers the steps of the setup described in the architecture above. I
         - `public static readonly string DocDBAuthKey = "<Your Doc DB Auth key>";` on line 15
         - `public static readonly string DocDBCollectionHistory = "<Your Collection Name>";` on line 20
     - Right click on the project and select `Publish`. Deploy the API to one of the web app resources you created in step 1
-    - As [Swagger](https://swagger.io/) is part of the project, so you can browse to `<resourcename>.azurewebsites.net/swagger` to see the .NET controllers and operations used in the project
+    - As we are using [Swagger](https://swagger.io/), so you can browse to `<resourcename>.azurewebsites.net/swagger` to see the .NET controllers and operations
    
 4.	Configure and Publish the Node Web App
 
