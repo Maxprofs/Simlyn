@@ -55,7 +55,7 @@ Online mode covers the steps of the setup described in the architecture above. I
 
 2.	Publish the Universal Windows Platform (UWP) app to the Raspberry Pi 3
 
-    - Make sure that the Raspberry Pi 3 is properly connected to the Bosch BME280 sensor by following [this](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/) guide.
+    - Make sure you proplery connected the Raspberry Pi 3 with the Bosch BME280 sensor by following [this](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/) guide.
     -	Install [Windows 10 IoT Core](https://docs.microsoft.com/en-us/windows/iot-core/connect-your-device/iotdashboard) on the device (if you experience slow performance, make sure to use a SD card of 16GB or more)
     - Open the class `MainPage.xaml.cs` located in the folder [Simlyn UWP](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20UWP) porject. Update the following parameters (you get the information from the Azure Portal):
         - `private string iotHubUri = "<Your IoT Hub Uri>";`
