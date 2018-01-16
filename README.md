@@ -30,11 +30,11 @@ Windows 10 IoT Core is running on a a Raspberry Pi 3. The device sends temperatu
 If you want to run Simlyn, please make sure that you have
 
 -	Microsoft Azure Subscription (start [here](https://azure.microsoft.com/en-us/free/) to register a free subscription)
--	Visual Studio 2017 (free community edition is fine for this demo)
+-	Visual Studio 2017 ([free community edition](https://www.visualstudio.com/downloads/) is perfectly fine for this demo)
 -	[Node](https://nodejs.org/en/), [NPM](https://www.npmjs.com/get-npm), [.NET Core 2.0](https://www.microsoft.com/net/download/windows)
--	Raspberry Pi 3 with th [BME280](https://www.adafruit.com/product/2652) sensor from Bosch
--   Windows 10 Dev Machine as we are deploying an Universal Windows Platform (UWP) app to the Raspberry
--   Visual Studio Code to update JavaScript files
+-	Raspberry Pi 3 with Bosch's [BME280 sensor](https://www.adafruit.com/product/2652) 
+-   Windows 10 Dev Machine as we are deploying an Universal Windows Platform (UWP) app to the Raspberry Pi 3
+-   [Visual Studio Code](https://code.visualstudio.com/download) or your preferred web IDE
 
 ## Online Mode
 1.	Deploy Azure services
