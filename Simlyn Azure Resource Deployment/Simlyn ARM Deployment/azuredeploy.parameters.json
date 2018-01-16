@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "sites_iotawsflashpoc_name": {
+      "value": "fdas412f412"
+    },
+    "sites_simlyn_backend_name": {
+      "value": "fdas412f412a"
+    },
+    "IotHubs_iotaflashhack_name": {
+      "value": "fdas412f412"
+    },
+    "databaseAccounts_simlyn_name_1": {
+      "value": "fdas412f412"
+    },
+    "serverfarms_iotawsflashpoc_asp_name": {
+      "value": "fdas412f412"
+    },
+    "config_web_name": {
+      "value": "fdas412f412"
+    },
+    "config_web_name_1": {
+      "value": "fdas412f412"
+    },
+    "hostNameBindings_iotawsflashpoc.azurewebsites.net_name": {
+      "value": "fdas412f412"
+    },
+    "hostNameBindings_simlyn_backend.azurewebsites.net_name": {
+      "value": "fdas412f412"
+    }
+  }
+}
