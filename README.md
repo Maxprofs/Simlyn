@@ -4,7 +4,7 @@ There is no doubt that both Microsoft Azure and IOTA will play crucial roles in 
 
 Some people asked me to show a quick demo. I published a [YouTube video](https://youtu.be/DZvTg52JB04) which walks you through some of the basic infrastructure steps. There is also a [demo](https://iotawsflashpoc.azurewebsites.net/) in offline mode of the web app available.
 
-Simlyn is an ongoing task. Feel free to create a pull request or contact me directly if you have any questions :thumbsup:
+Simlyn is opena and an ongoing task. Feel free to create a pull request or create an issue if you have any questions :thumbsup:
 
 ![Simlyn Web App](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_WebApp%20-%20New.JPG)
 
