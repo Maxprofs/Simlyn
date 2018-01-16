@@ -47,8 +47,8 @@ Online mode covers the steps of the setup described in the architecture above. I
 	| :---         | :---         | :---         | :---          |
 	| IoT Hub   | Devices     | Enabled    | Set up your IoT device    |
 	| Web App (Node)     | Web Sockets       | Enabled      | Providing full-duplex communication over TCP     |
-	| Web App (Node)     | Azure.IoT.IoTHub.ConnectionString       | <your connection string>      | IoT Hub Connectin string used for dev registration     |
-	| Web App (Node)     | Azure.IoT.IoTHub.ConsumerGroup       | <your IoT Hub consumer group>      | Enable readers to read message independetly     |
+	| Web App (Node)     | Azure.IoT.IoTHub.ConnectionString       | Your connection string provided by the IoT Hub    | IoT Hub Connectin string used for dev registration     |
+	| Web App (Node)     | Azure.IoT.IoTHub.ConsumerGroup       | Your consumer group provided by the IoT Hub      | Enable readers to read message independetly     |
 
 2.	Publish the Universal Windows Platform (UWP) app to the Raspberry Pi 3
 
