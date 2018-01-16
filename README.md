@@ -8,6 +8,8 @@ Simlyn is an ongoing task. Feel free to create a pull request or contact me dire
 
 ![Simlyn Web App](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_WebApp%20-%20New.JPG)
 
+![Simlyn Raspberry Pi 3](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn%20Raspberry%20Pi.JPG)
+
 ## Architecture
 
 ![Simlyn Architecture Diagram](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_Architecture.jpg)
