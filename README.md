@@ -55,12 +55,12 @@ Online mode covers the steps of the setup described in the architecture above. I
 
 2.	Publish the Universal Windows Platform (UWP) app to the Raspberry Pi 3
 
-    - Make sure you proplery connected the Raspberry Pi 3 with the Bosch BME280 sensor by following [this](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/) guide.
-    -	Install [Windows 10 IoT Core](https://docs.microsoft.com/en-us/windows/iot-core/connect-your-device/iotdashboard) on the device (if you experience slow performance, make sure to use a SD card of 16GB or more)
-    - Open the class `MainPage.xaml.cs` located in the folder [Simlyn UWP](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20UWP) porject. Update the following parameters (you get the information from the Azure Portal):
-        - `private string iotHubUri = "<Your IoT Hub Uri>";`
-        - `private string deviceKey = "<Your Device Key>";`
-        - `deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("<Your Device Name>", deviceKey), TransportType.Mqtt);`
+    - Make sure you proplery connected the Raspberry Pi 3 to the BME280 sensor by following [this](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/) guide
+    -	Install [Windows 10 IoT Core](https://docs.microsoft.com/en-us/windows/iot-core/connect-your-device/iotdashboard) on the Raspberry Pi 3 (if you experience slow performance, make sure to use a SD card of 16GB or more)
+    - Open the class `MainPage.xaml.cs` located in the folder [Simlyn Universal Windows Platform App](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Universal%20Windows%20Platform%20App). Update the following variables as described below (please see the Azure portal to get your keys):
+        - `private string iotHubUri = "<Your IoT Hub Uri>";` on line 33
+        - `private string deviceKey = "<Your Device Key>";` on line 34
+        - `deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("<Your Device Name>", deviceKey), TransportType.Mqtt);` on line 39
     - Connect Visual Studio to your remote Raspberry device by following [this](https://docs.microsoft.com/en-us/windows/iot-core/develop-your-app/appdeployment) tutorial
     - Build the Visual Studio solution (Ctrl + Shift + B). This could take a while as VS downloads and installs all NuGet packages used in the project
     - Deploy the app to the remote device (you can publish it as well). As we are running the sample on a Raspberry Pi 3, make sure that you selected the target platform “ARM”.
