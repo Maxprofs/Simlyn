@@ -1,4 +1,4 @@
-# Simlyn - Connecting IOTA and Microsoft Azure
+# Simlyn - Connecting IOTA with Microsoft Azure
 
 There is no doubt that both Microsoft Azure and IOTA will play crucial roles in the upcoming Internet of Things (IoT) area. Both solutions enable unique solutions to make sure that large data can be handled in a secured and scaled manner. Simlyn connects both platforms by demonstrating a proof of concept which can applied to the real world: Data provided by a physical hardware device is sent to the cloud. A web application simulates a data provider consumer behavior using IOTA's Flash library. All flash channel transactions are stored in a NoSQL database which servers as the source for a machine algorithm scenario.
 
@@ -76,26 +76,27 @@ Online mode covers the steps of the setup described in the architecture above. I
         - `public static readonly string DocDBCollectionHistory = "<Your Collection Name>";` on line 20
     - Right click on the project and select `Publish`. Deploy the API to one of the web app resources you created in step 1
     - As we are using [Swagger](https://swagger.io/), so you can browse to `<resourcename>.azurewebsites.net/swagger` to see the .NET controllers and operations
+    
+    ![Simlyn Web API Swagger](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Swagger%20API%20App.JPG)
    
 4.	Configure and Publish the Node Web App
 
-	- I recommend to use [Visual Studio Code](https://code.visualstudio.com/) for editing JavaScript and HTML files
-    - Open the directroy [Simlyn Node App](https://blaaah.de) and switch to `public/javascripts/` folder. Edit the following variable: 
+    - Open the directroy [Simlyn Node App](https://blaaah.de) and switch to `public/javascripts/` folder using [Visual Studio Code](https://code.visualstudio.com/) or you preferred web IDE. Edit the following variable: 
         - `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `index.js`
-		- `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `iotaflash.js`
-		- `var UseMockedData = false` in `index.js`
-	- Switch to `IOTAHelpers/globals.js`and update the variables listed below  (use the online generator get a seed and generate an address using the IOTA's light wallet)
+	- `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `iotaflash.js`
+	- `var UseMockedData = false` in `index.js`
+   - Switch to the file `IOTAHelpers/globals.js`and update the variables listed below (you may use an online seed generator and create an address using IOTA's light wallet)
 		- `oneSeed`
 		- `twoSeed`
 		- `oneSettlement`
 		- `twoSettlement`
-    - Switch to the second web app and enable local Git deployment by following this tutorias
-	- Enable local git repository deployment by following [this tutorial](https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-local-git)
+   - Make sure you enabled local git repository deployment by following [this tutorial](https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-local-git). Copy the Git repository URL from web app resource using the Azure portal
     - Publish the Node app to Azure by running the cmdlets below
-        - `git remote add simlynnodeapp <Git clone URL from portal>`
+        - `git remote add simlynnodeapp <Git clone URL from the Azure portal>`
         - `git push simlynnodeapp master:master`
-    - The deployment will take some time as the command start the build and release process
-    - After clicking on the “End Simulation” button, the Final Bundle gets created. I did not implement the `AttachToTangle` function so the demo gets automatically reset
+    - The deployment will take some time as the cmdlet kicks off the Node build and release tasks
+    - You can now browse to the URL 'https://<your-web-app>.azurewebsites.net' and start the simulation
+    - After clicking on the “End Simulation” button, IOTA's Final Bundle gets created. I did not implement the `AttachToTangle` function so the demo gets automatically reset
     
 4. Enabling Power BI to visualize the coordinates provided by the Cosmos DB database
 
@@ -107,7 +108,7 @@ Online mode covers the steps of the setup described in the architecture above. I
 ![Simlyn Power BI](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_PowerBi.JPG)
 
 ## Offline Mode
-You can also run Simlyn in offline mode. This means that the Node app has no interaction to the cloud and the hardware device.
+You can also run Simlyn in offline mode. This means that the Node app has no interaction to the cloud (except Cosmos DB) and the hardware device.
 
 1. Open the command line tool and set the environment variables below
     - `set Azure.IoT.IoTHub.ConnectionString=<randomstring>`
