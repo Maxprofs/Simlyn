@@ -50,6 +50,7 @@ Online mode covers the steps of the setup described in the architecture above. I
 	| Web App (Node)     | Azure.IoT.IoTHub.ConnectionString       | Your connection string provided by the IoT Hub    | IoT Hub Connectin string used for dev registration     |
 	| Web App (Node)     | Azure.IoT.IoTHub.ConsumerGroup       | Your consumer group provided by the IoT Hub      | Enable readers to read message independetly     |
 	| API App (.NET)     | CORS       | *      | Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external host    |
+	| Cosmos DB     | Throughput (RU/s)       | 400      |   Currency of Cosmos DB  |
 
 2.	Publish the Universal Windows Platform (UWP) app to the Raspberry Pi 3
 
