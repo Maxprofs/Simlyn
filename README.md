@@ -45,8 +45,9 @@ Online mode covers the steps of the setup described in the architecture above. I
     
 	| Resource Type | Setting | Value | Description |
 	| :---         |     :---:      |          ---: |          ---: |
-	| git status   | git status     | git status    | git status    |
-	| git diff     | git diff       | git diff      | git diff      |
+	| IoT Hub   | Devices     | Enabled    | Set up your IoT device    |
+	| Web App (Node)     | Web Sockets       | Enabled      | Providing full-duplex communication over TCP     |
+	| Web App (Node)     | Azure.IoT.IoTHub.ConnectionString       | Enabled      | Providing full-duplex communication over TCP     |
 
 2.	Publish the Universal Windows Platform (UWP) app to the Raspberry Pi 3
 
