@@ -68,7 +68,6 @@ Online mode covers the steps of the setup described in the architecture above. I
 
 3. Configure and Publish the Web API
 
-    - Make sure that Cross-Origin Resource Sharing (CORS) [is enabled](https://docs.microsoft.com/en-us/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services)
 	- If you havent done so far, install [.NET Core 2.0 or later](https://www.microsoft.com/net/download/windows) on your machine
     - Open the [Web API project](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Web%20API) and switch to the `Globals.cs` class in the Helpers folder. Edit the following parameters:
         - `public static readonly string DocDBDatabaseId = "<Your Database ID>";`
@@ -80,7 +79,6 @@ Online mode covers the steps of the setup described in the architecture above. I
    
 4.	Configure and Publish the Node Web App
 
-    - Make sure that the node app enabled [Web Sockets](https://azure.microsoft.com/en-us/blog/introduction-to-websockets-on-windows-azure-web-sites/). Also check if the App settings `Azure.IoT.IoTHub.ConnectionString` and `Azure.IoT.IoTHub.ConsumerGroup` are set properly.
 	- I recommend to use [Visual Studio Code](https://code.visualstudio.com/) for editing JavaScript and HTML files
     - Open the directroy [Simlyn Node App](https://blaaah.de) and switch to `public/javascripts/` folder. Edit the following variable: 
         - `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `index.js`
