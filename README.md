@@ -61,10 +61,10 @@ Online mode covers the steps of the setup described in the architecture above. I
         - `private string iotHubUri = "<Your IoT Hub Uri>";` on line 33
         - `private string deviceKey = "<Your Device Key>";` on line 34
         - `deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("<Your Device Name>", deviceKey), TransportType.Mqtt);` on line 39
-    - Connect Visual Studio to your remote Raspberry device by following [this](https://docs.microsoft.com/en-us/windows/iot-core/develop-your-app/appdeployment) tutorial
-    - Build the Visual Studio solution (Ctrl + Shift + B). This could take a while as VS downloads and installs all NuGet packages used in the project
-    - Deploy the app to the remote device (you can publish it as well). As we are running the sample on a Raspberry Pi 3, make sure that you selected the target platform “ARM”.
-    - You should now see some output in the console. You can verify the streaming by switching to the IoT Hub in the Azure portal.
+    - Connect Visual Studio to your remote Raspberry device. [This](https://docs.microsoft.com/en-us/windows/iot-core/develop-your-app/appdeployment) tutorial shows the basic steps
+    - Build the Visual Studio solution (Ctrl + Shift + B). This could take a while as VS downloads and installs the NuGet packages used in the project
+    - Deploy the app to the remote device (you can publish it as well). As we are running the sample on a Raspberry, make sure you select "ARM" as your target platform
+    - You will see some debugging output in the console. You can verify the data ingress by switching to the IoT Hub in the Azure portal
 
 3. Configure and Publish the Web API
 
