@@ -4,9 +4,11 @@ There is no doubt that both Microsoft Azure and IOTA will play crucial roles in 
 
 Some people asked me to show a quick demo. I published a [YouTube video](https://youtu.be/DZvTg52JB04) which walks you through some of the basic infrastructure steps. There is also a [demo](https://iotawsflashpoc.azurewebsites.net/) in offline mode of the web app available.
 
-Simlyn is an ongoing task. Feel free to create a pull request or contact me directly if you have any questions :thumbsup:
+Simlyn is open and an ongoing task. Feel free to create a pull request or create an issue if you have any questions :thumbsup:
 
 ![Simlyn Web App](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_WebApp%20-%20New.JPG)
+
+![Simlyn Raspberry Pi 3](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn%20Raspberry%20Pi.JPG)
 
 ## Architecture
 
@@ -28,20 +30,32 @@ Windows 10 IoT Core is running on a a Raspberry Pi 3. The device sends temperatu
 If you want to run Simlyn, please make sure that you have
 
 -	Microsoft Azure Subscription (start [here](https://azure.microsoft.com/en-us/free/) to register a free subscription)
--	Visual Studio 2017 (free community edition is fine for this demo)
+-	Visual Studio 2017 ([free community edition](https://www.visualstudio.com/downloads/) is perfectly fine for this demo)
 -	[Node](https://nodejs.org/en/), [NPM](https://www.npmjs.com/get-npm), [.NET Core 2.0](https://www.microsoft.com/net/download/windows)
--	Raspberry Pi 3 with th [BME280](https://www.adafruit.com/product/2652) sensor from Bosch
--   Windows 10 Dev Machine as we are deploying an Universal Windows Platform (UWP) app to the Raspberry
--   Visual Studio Code to update JavaScript files
+-	Raspberry Pi 3 with Bosch's [BME280 sensor](https://www.adafruit.com/product/2652) 
+-   Windows 10 Dev Machine as we are deploying an Universal Windows Platform (UWP) app to the Raspberry Pi 3
+-   [Visual Studio Code](https://code.visualstudio.com/download) or your preferred web IDE
 
 ## Online Mode
+Online mode covers the steps of the setup described in the architecture above. If you want to run Simlyn locally, I recommend you to walk through the offline mode scenario.
+
 1.	Deploy Azure services
 
-    Open the Visual Studio solution [Simlyn ARM Deployment](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20ARM%20Deployment). Deploy the template into your Resource Group by following [this guide](https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy#deploy-the-resource-group-project-to-azure). Make sure you properly set the variables in the parameters file. 
+    Open the Visual Studio solution [Simlyn ARM Deployment](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20ARM%20Deployment). Deploy the template into an Azure Resource Group (RG) by following [this guide](https://docs.microsoft.com/en-us/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy#deploy-the-resource-group-project-to-azure). Make sure you properly set the variables in the parameters file. Please also make sure that the variables are set as described in the table below
+    
+	| Resource     | Setting | Value | Description |
+	| :---         | :---         | :---         | :---          |
+	| IoT Hub   | Devices     | Enabled    | Set up your IoT device    |
+	| Web App (Node)     | Web Sockets       | Enabled      | Providing full-duplex communication over TCP     |
+	| Web App (Node)     | Azure.IoT.IoTHub.ConnectionString       | Your connection string provided by the IoT Hub    | IoT Hub Connectin string used for dev registration     |
+	| Web App (Node)     | Azure.IoT.IoTHub.ConsumerGroup       | Your consumer group provided by the IoT Hub      | Enable readers to read message independetly     |
+	| Web App (Node)     | Deployment Option       | Local Git Deployment      | Deploy your app to Azure Web Apps from a local Git repository     |
+	| API App (.NET)     | CORS       | *      | Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external host    |
+	| Cosmos DB     | Throughput (RU/s)       | 400      |   Currency of Cosmos DB  |
 
 2.	Publish the Universal Windows Platform (UWP) app to the Raspberry Pi 3
 
-    - Make sure that the Raspberry Pi 3 is properly connected to the Bosch BME280 sensor by following [this](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/) guide.
+    - Make sure you proplery connected the Raspberry Pi 3 with the Bosch BME280 sensor by following [this](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/) guide.
     -	Install [Windows 10 IoT Core](https://docs.microsoft.com/en-us/windows/iot-core/connect-your-device/iotdashboard) on the device (if you experience slow performance, make sure to use a SD card of 16GB or more)
     - Open the class `MainPage.xaml.cs` located in the folder [Simlyn UWP](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20UWP) porject. Update the following parameters (you get the information from the Azure Portal):
         - `private string iotHubUri = "<Your IoT Hub Uri>";`
@@ -54,7 +68,6 @@ If you want to run Simlyn, please make sure that you have
 
 3. Configure and Publish the Web API
 
-    - Make sure that Cross-Origin Resource Sharing (CORS) [is enabled](https://docs.microsoft.com/en-us/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services)
 	- If you havent done so far, install [.NET Core 2.0 or later](https://www.microsoft.com/net/download/windows) on your machine
     - Open the [Web API project](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Web%20API) and switch to the `Globals.cs` class in the Helpers folder. Edit the following parameters:
         - `public static readonly string DocDBDatabaseId = "<Your Database ID>";`
@@ -66,13 +79,12 @@ If you want to run Simlyn, please make sure that you have
    
 4.	Configure and Publish the Node Web App
 
-    - Make sure that the node app enabled [Web Sockets](https://azure.microsoft.com/en-us/blog/introduction-to-websockets-on-windows-azure-web-sites/). Also check if the App settings `Azure.IoT.IoTHub.ConnectionString` and `Azure.IoT.IoTHub.ConsumerGroup` are set properly.
 	- I recommend to use [Visual Studio Code](https://code.visualstudio.com/) for editing JavaScript and HTML files
     - Open the directroy [Simlyn Node App](https://blaaah.de) and switch to `public/javascripts/` folder. Edit the following variable: 
         - `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `index.js`
 		- `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` in `iotaflash.js`
 		- `var UseMockedData = false` in `index.js`
-	- Switch to `IOTAHelpers/globals.js`and update the variables listed below  (use the online generator get create a a seed and generate an address using the wallet)
+	- Switch to `IOTAHelpers/globals.js`and update the variables listed below  (use the online generator get a seed and generate an address using the IOTA's light wallet)
 		- `oneSeed`
 		- `twoSeed`
 		- `oneSettlement`
