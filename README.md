@@ -95,7 +95,7 @@ Online mode covers the steps of the setup described in the architecture above. I
         - `git remote add simlynnodeapp <Git clone URL from the Azure portal>`
         - `git push simlynnodeapp master:master`
     - The deployment will take some time as the cmdlet kicks off the Node build and release tasks
-    - You can now browse to the URL 'https://<your-web-app>.azurewebsites.net' and start the simulation
+    - You can now browse to the URL `https://yourwebapp.azurewebsites.net` and start the simulation
     - After clicking on the “End Simulation” button, IOTA's Final Bundle gets created. I did not implement the `AttachToTangle` function so the demo gets automatically reset
     
 4. Enabling Power BI to visualize the coordinates provided by the Cosmos DB database
