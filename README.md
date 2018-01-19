@@ -47,8 +47,8 @@ Online mode covers the steps of the setup described in the architecture above. I
 	| :---         | :---         | :---         | :---          |
 	| IoT Hub   | Devices     | Enabled    | Set up your IoT device    |
 	| Web App (Node)     | Web Sockets       | Enabled      | Providing full-duplex communication over TCP     |
-	| Web App (Node)     | Azure.IoT.IoTHub.ConnectionString       | Your connection string provided by the IoT Hub    | IoT Hub Connectin string used for dev registration     |
-	| Web App (Node)     | Azure.IoT.IoTHub.ConsumerGroup       | Your consumer group provided by the IoT Hub      | Enable readers to read message independetly     |
+	| Web App (Node)     | Azure.IoT.IoTHub.ConnectionString       | Your connection string provided by the IoT Hub    | IoT Hub Connecting string used for dev registration     |
+	| Web App (Node)     | Azure.IoT.IoTHub.ConsumerGroup       | Your consumer group provided by the IoT Hub      | Enable readers to read message independently     |
 	| Web App (Node)     | Deployment Option       | Local Git Deployment      | Deploy your app to Azure Web Apps from a local Git repository     |
 	| API App (.NET)     | CORS       | *      | Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external host    |
 	| Cosmos DB     | Throughput (RU/s)       | 400      |   Currency of Cosmos DB  |
@@ -56,26 +56,26 @@ Online mode covers the steps of the setup described in the architecture above. I
 2.	Publish the Universal Windows Platform (UWP) app to the Raspberry Pi 3
 
     - Make sure you proplery connected the Raspberry Pi 3 to the BME280 sensor by following [this](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/) guide
-    -	Install [Windows 10 IoT Core](https://docs.microsoft.com/en-us/windows/iot-core/connect-your-device/iotdashboard) on the Raspberry Pi 3 (if you experience slow performance, make sure to use a SD card of 16GB or more)
-    - Open the class `MainPage.xaml.cs` located in the folder [Simlyn Universal Windows Platform App](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Universal%20Windows%20Platform%20App). Update the following variables as described below (please see the Azure portal to get your keys):
+    -	Install [Windows 10 IoT Core](https://docs.microsoft.com/en-us/windows/iot-core/connect-your-device/iotdashboard) on the Raspberry Pi 3 (if you experience slow performance behavior, make sure to use a SD card of 16GB or more)
+    - Open the class `MainPage.xaml.cs` located in the folder [Simlyn Universal Windows Platform App](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Universal%20Windows%20Platform%20App). Update the variables as described below (please see the Azure portal the keys):
         - `private string iotHubUri = "<Your IoT Hub Uri>";` on line 33
         - `private string deviceKey = "<Your Device Key>";` on line 34
-        - `deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("<Your Device Name>", deviceKey), TransportType.Mqtt);` on line 39
-    - Connect Visual Studio to your remote Raspberry device. [This](https://docs.microsoft.com/en-us/windows/iot-core/develop-your-app/appdeployment) tutorial shows the basic steps
+        - `deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("Your Device Name", deviceKey), TransportType.Mqtt);` on line 39
+    - Remotely connect Visual Studio to your Raspberry. [This](https://docs.microsoft.com/en-us/windows/iot-core/develop-your-app/appdeployment) tutorial shows the basic steps
     - Build the Visual Studio solution (Ctrl + Shift + B). This could take a while as VS downloads and installs the NuGet packages used in the project
-    - Deploy the app to the remote device (you can publish it as well). As we are running the sample on a Raspberry, make sure you select "ARM" as your target platform
-    - You will see some debugging output in the console. You can verify the data ingress by switching to the IoT Hub in the Azure portal
+    - Deploy the app to the device (you can publish as well). As we are running the sample on a Broadcom processor, make sure you select "ARM" as the target platform
+    - You will see some debugging output in the console after the deployment. You can verify cloud data ingress by switching to the IoT Hub in the Azure portal
 
 3. Configure and Publish the Web API
 
-	- If you havent done by now, install [.NET Core 2.0 or later](https://www.microsoft.com/net/download/windows) on your local machine
+	- If you havent done so far, install [.NET Core 2.0 or later](https://www.microsoft.com/net/download/windows) on your machine
     - Open the [Simlyn Web API](https://github.com/chris-to-pher/Simlyn/tree/master/Simlyn%20Web%20API) and switch to the class `Globals.cs`. Edit the following parameters (you get all parameters by switching to the Cosmos DB database account using the Azure portal):
         - `public static readonly string DocDBDatabaseId = "<Your Database ID>";` on line 13
         - `public static readonly string DocDBEndpoint = "<Your Cosmos DB Endpoint Uri>";` on line 14
         - `public static readonly string DocDBAuthKey = "<Your Doc DB Auth key>";` on line 15
         - `public static readonly string DocDBCollectionHistory = "<Your Collection Name>";` on line 20
     - Right click on the project and select `Publish`. Deploy the API to one of the web app resources you created in step 1
-    - As we are using [Swagger](https://swagger.io/), so you can browse to `<resourcename>.azurewebsites.net/swagger` to see the .NET controllers and operations
+    - As we are using the [Swagger](https://swagger.io/) package, browse to `<resourcename>.azurewebsites.net/swagger` to see the public .NET POST and GET operations
     
     ![Simlyn Web API Swagger](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Swagger%20API%20App.JPG)
    
