@@ -116,10 +116,10 @@ You can also run Simlyn in offline mode. This means that the Node app has no int
 2. Open the Node app using Visual Studio Code or your preferred IDE. Set the `mockedData` boolean to true 
     - `var mockedData = true` in `public/javascripts/index.js`
 3.  Switch to `IOTAHelpers/globals.js` and update the variables listed below (use the online generator get create a a seed and generate an address using the wallet)
-		- `oneSeed : <seedOne>`
-		- `twoSeed: <seedTwo>`
-		- `oneSettlement: <settlementOne>`
-		- `twoSettlement: <settlementTwo>`
+	- `oneSeed : "seedOne"`
+	- `twoSeed: "seedTwo"`
+	- `oneSettlement: "settlementOne"`
+	- `twoSettlement: "settlementTwo"`
 3. Switch to a command line and run the following node commands
     - `npm install`
     - `npm start`
