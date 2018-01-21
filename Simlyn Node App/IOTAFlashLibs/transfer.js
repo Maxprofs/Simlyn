@@ -363,7 +363,7 @@ function getDiff(root, remainder, history, bundles) {
   }
   var negatives = newCopy.filter(tx => tx.value < 0);
   if(negatives.length != 0 ) {
-    //throw new Error(TransferErrors.INVALID_INPUT);
+    throw new Error(TransferErrors.INVALID_INPUT);
   }
 
   var minusRemainder = newCopy.filter(tx => tx.address !== remainder.address)

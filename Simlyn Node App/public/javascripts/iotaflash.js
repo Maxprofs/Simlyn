@@ -1,5 +1,5 @@
 var server = window.location.href;
-var apiService = 'https://<yourapiname>.azurewebsites.net/api';
+var apiService = 'https://simlyn-backend.azurewebsites.net/api';
 
 // Some Random Coordinates for Power BI
 var RandomCoordinates = ["50.892373,6.994343", "48.506939,9.203804", "52.520007,13.404954", "48.135125,11.581980", "48.775846,9.182932"];
