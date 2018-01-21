@@ -6,7 +6,7 @@ Some people asked me to show a quick demo of Simlyn. I published a [YouTube vide
 
 Simlyn is open and an ongoing task. Feel free to create a pull request or create an issue if you have any questions :thumbsup:
 
-![Simlyn Web App](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_WebApp%20-%20New.JPG)
+![Simlyn Web App](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_WebApp_New.JPG)
 
 ![Simlyn Raspberry Pi 3](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn%20Raspberry%20Pi.JPG)
 
