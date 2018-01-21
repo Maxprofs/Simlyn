@@ -1,4 +1,4 @@
-# Simlyn - Connecting IOTA with Microsoft Azure
+# Simlyn - Connecting IOTA`S Flash Library with Microsoft Azure
 
 There is no doubt that both Microsoft Azure and IOTA will play crucial roles in the upcoming Internet of Things (IoT) area. Both platforms enable unique solutions to make sure that large data can be handled in a secured and scaled manner. Simlyn connects both platforms by demonstrating a proof of concept which can be applied to the real world: Data provided by a physical hardware device is sent to the cloud. A web application simulates a provider consumer model using IOTA's Flash library. All flash channel transactions are stored in a NoSQL database which serves as the source for a machine algorithm demo.
 
