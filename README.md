@@ -21,7 +21,7 @@ From an architecture perspective, Simlyn consists of six independent parts:
 - **Node Web App**: Provides Flash Channel support using flash.lib.js, acts as frontend solution
 - **Web API**: .NET Core Web API to handle database calls
 - **Cosmos DB**: NoSQL Database for low latency and massively scalable applications
-- **Power BI**: Business tool that providesreal-time analytic support
+- **Power BI**: Business tool providing real-time analytic support
 
 ## How does Simlyn work?
 Windows 10 IoT Core is running on a a Raspberry Pi 3. The device sends temperature and humidity data to a an [Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/) using the MQTT protocol. Incoming traffic is routed to a Node web application deployed in Azure. The web app implements IOTA' s [Flash Library](https://github.com/iotaledger/iota.flash.js) to handle bi-directional off-Tangle payment channels. Furthermore, the app shows graphical output using the [chart.js](https://github.com/chartjs) and [Bootstrap](https://github.com/twbs/bootstrap) frameworks. Another link between IOTA and Azure is a No-SQL database ([Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)) that stores flash channel transactions. Since Cosmos DB enables low latency, the data could be used for Machine Learning scenarios, graphical demos, or even live billing analysis. I connected Power BI to demonstrate a simple way to show graphical output of the Flash Channel transactions.
