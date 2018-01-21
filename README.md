@@ -85,7 +85,7 @@ Online mode covers the steps of the setup described in the architecture above. I
         - `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` on line 6 in `index.js`
 	- `var apiService = '<Your FQDN of the API // e.g., https://simlyn-backend.azurewebsites.net/api>'` on line 2 in `iotaflash.js`
 	- `var UseMockedData = false` on line 72 in `index.js`
-   - Switch to the file `IOTAHelpers/globals.js`and update the variables listed below (you may use an online seed generator and create an address using IOTA's light wallet)
+   - Switch to the file `IOTAHelpers/globals.js`and update the variables listed below (you may use an online seed generator and create an address using IOTA's light wallet). Make sure your addresses has 81 chars, delete the checksum if needed.
 		- `oneSeed : <seedOne>`
 		- `twoSeed: <seedTwo>`
 		- `oneSettlement: <settlementOne>`
@@ -115,7 +115,7 @@ You can also run Simlyn in offline mode. This means that the Node app has no int
     - `set Azure.IoT.IoTHub.ConsumerGroup=<randomstring>`
 2. Open the Node app using Visual Studio Code or your preferred IDE. Set the `mockedData` boolean to true 
     - `var mockedData = true` in `public/javascripts/index.js`
-3.  Switch to `IOTAHelpers/globals.js` and update the variables listed below (use the online generator get create a a seed and generate an address using the wallet)
+3.  Switch to `IOTAHelpers/globals.js` and update the variables listed below (use the online generator get create a a seed and generate an address using the wallet). Make sure your addresses has 81 chars, delete the checksum if needed.
 	- `oneSeed : "seedOne"`
 	- `twoSeed: "seedTwo"`
 	- `oneSettlement: "settlementOne"`
