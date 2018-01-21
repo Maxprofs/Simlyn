@@ -1,5 +1,5 @@
 var server = window.location.href;
-var apiService = 'https://<your api name>.azurewebsites.net/api';
+var apiService = 'https://simlyn-backend.azurewebsites.net/api';
 
 // Some Random Coordinates for Power BI
 var RandomCoordinates = ["50.892373,6.994343", "48.506939,9.203804", "52.520007,13.404954", "48.135125,11.581980", "48.775846,9.182932"];
@@ -91,6 +91,18 @@ function StartTransfer() {
 
             // Insert new Cosmos DB document
             addNewHistoryItem(message, 1, SampleAddress, RandomCoordinates[Math.floor(Math.random() * RandomCoordinates.length)]);
+
+            // Calculating current Flash Channel Balance
+            $('#TransactableTokens').val(data.flash.deposit.reduce((acc, v) => acc + v));
+        }
+    );
+}
+
+function getCurrentChannelBalance() {
+    $.get(
+        server + 'api/getbalance',
+        function(data) {
+            console.log(data);
         }
     );
 }

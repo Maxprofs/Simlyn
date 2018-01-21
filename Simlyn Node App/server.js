@@ -22,6 +22,9 @@ var oneFlash, twoFlash;
 // IOTA Flash Multisigs
 var oneMultisigs = [], twoMultisigs = [];
 
+// Current Channel Balance
+var currentFlashBalance;
+
 // Step 1: Initialize Flash Objects
 app.get('/api/initializeFlashChannels', function(req, res) {
 
@@ -87,6 +90,8 @@ app.get('/api/consumeandorganise', function(req, res) {
     "Transactable tokens: ",
     oneFlash.flash.deposit.reduce((acc, v) => acc + v)
   )
+
+  currentFlashBalance = oneFlash.flash.deposit.reduce((acc, v) => acc + v);
 
   res.send(oneFlash);
 })

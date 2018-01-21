@@ -3,7 +3,7 @@ $(document).ready(function () {
   var timeData = [],
       temperatureData = [],
       humidityData = [],
-      apiService = 'https://<your api name>.azurewebsites.net/api';
+      apiService = 'https://simlyn-backend.azurewebsites.net/api';
 
   var data = {
     labels: timeData,
