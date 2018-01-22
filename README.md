@@ -2,7 +2,7 @@
 
 There is no doubt that both Microsoft Azure and IOTA will play crucial roles in the upcoming Internet of Things (IoT) area. Both platforms enable unique solutions to make sure that large data can be handled in a secured and scaled manner. Simlyn connects both platforms by demonstrating a proof of concept which can be applied to the real world: Data provided by a physical hardware device is sent to the cloud. A web application simulates a provider consumer model using IOTA's Flash library. All flash channel transactions are stored in a NoSQL database which serves as the source for a machine algorithm demo.
 
-Some people asked me to show a quick demo of Simlyn. I published a [YouTube video](https://youtu.be/DZvTg52JB04) which walks you through  the basic steps. There is also a [demo](https://iotawsflashpoc.azurewebsites.net/) in offline mode of the web app available.
+Some people asked me to show a quick demo of Simlyn. I published a [YouTube video](https://youtu.be/DZvTg52JB04) which walks you through  the basic steps. There is also a [demo](https://simlynofflinedemo.azurewebsites.net/) in offline mode of the web app available.
 
 Simlyn is open and an ongoing task. Feel free to create a pull request or create an issue if you have any questions :thumbsup:
 
