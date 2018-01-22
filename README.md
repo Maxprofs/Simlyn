@@ -108,7 +108,7 @@ Online mode covers the steps of the setup described in the architecture above. I
 ![Simlyn Power BI](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_PowerBi.JPG)
 
 ## Offline Mode
-You can also run Simlyn in offline mode. This means that the Node app has no interaction to the cloud (except Cosmos DB) and the hardware device.
+You can also run Simlyn in offline mode. This means that the Node app has no interaction to the cloud (except Cosmos DB) and the hardware device. There is also a [demo](https://simlynofflinedemo.azurewebsites.net/) in offline mode of the web app available.
 
 1. Open the command line tool and set the environment variables below
     - `set Azure.IoT.IoTHub.ConnectionString=<randomstring>`
