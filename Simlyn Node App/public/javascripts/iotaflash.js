@@ -117,7 +117,7 @@ function addNewHistoryItem(message, amount, receiverAddress, coordinates) {
           coordinates: coordinates
         },
         function(data) {
-          writeToFlashTxOutout('Cosmos DB response: Historiy item ' + data.id + ' successfully added');
+          writeToFlashTxOutout('Cosmos DB response: History item ' + data.id + ' successfully added');
         }
       );
 }
