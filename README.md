@@ -26,10 +26,6 @@ From an architecture perspective, Simlyn consists of six independent parts:
 ## How does Simlyn work?
 Windows 10 IoT Core is running on a a Raspberry Pi 3. The device sends temperature and humidity data to a an [Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/) using the MQTT protocol. Incoming traffic is routed to a Node web application deployed in Azure. The web app implements IOTA' s [Flash Library](https://github.com/iotaledger/iota.flash.js) to handle bi-directional off-Tangle payment channels. Furthermore, the app shows graphical output using the [chart.js](https://github.com/chartjs) and [Bootstrap](https://github.com/twbs/bootstrap) frameworks. Another link between IOTA and Azure is a No-SQL database ([Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)) that stores flash channel transactions. Since Cosmos DB enables low latency, the data could be used for Machine Learning scenarios, graphical demos, or even live billing analysis. I connected Power BI to demonstrate a simple way to show graphical output of the Flash Channel transactions.
 
-## Build Status
-
-<img src="https://felandilprojects.visualstudio.com/_apis/public/build/definitions/8112d254-cde8-46da-add3-75cab5fb802c/1/badge"/>
-
 ## Requirements
 If you want to run Simlyn, please make sure that you have
 
