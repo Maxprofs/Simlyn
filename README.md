@@ -10,8 +10,6 @@ Simlyn is open and an ongoing task. Feel free to create a pull request or create
 
 ![Simlyn Web App](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_WebApp_New.JPG)
 
-![Simlyn Raspberry Pi 3](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn%20Raspberry%20Pi.JPG)
-
 ## Architecture
 
 ![Simlyn Architecture Diagram](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn_Architecture.jpg)
@@ -71,6 +69,8 @@ Online mode covers the steps of the setup described in the architecture above. I
     - Build the Visual Studio solution (Ctrl + Shift + B). This could take a while as VS downloads and installs the NuGet packages used in the project
     - Deploy the app to the device (you can publish as well). As we are running the sample on a Broadcom processor, make sure you select "ARM" as the target platform
     - You will see some debugging output in the console after the deployment. You can verify cloud data ingress by switching to the IoT Hub in the Azure portal
+    
+    ![Simlyn Raspberry Pi 3](https://raw.githubusercontent.com/chris-to-pher/Simlyn/master/Screenshots/Simlyn%20Raspberry%20Pi.JPG)
 
 3. Configure and Publish the Web API
 
